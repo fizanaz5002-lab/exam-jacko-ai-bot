@@ -40,7 +40,7 @@ const mockQuestions = {
     {
       id: 4,
       question: 'In which year was the first railway line in India inaugurated?',
-      questionHi: 'भारत में पहली रेलवे लाइन किस वर्�� का उद्घाटन किया गया?',
+      questionHi: 'भारत में पहली रेलवे लाइन किस वर्ष का उद्घाटन किया गया?',
       answer: '1853',
       answerHi: '1853',
       difficulty: 'medium',
