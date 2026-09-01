@@ -2,84 +2,127 @@
 
 A comprehensive AI-powered exam preparation chatbot designed for Indian competitive exams including BPSC, UPSC, SSC, Railway, and Bihar exams. Features a mobile-friendly interface with bilingual support (Hindi & English), intelligent MCQ generation, current affairs updates, and exam-wise question answering.
 
-## Features
+## 🎯 Features
 
 ✨ **Core Features:**
 - 🤖 **AI Chat Interface** - Intelligent exam-focused conversation with bilingual support (Hindi/English)
 - 📱 **Mobile-First Design** - Fully responsive UI optimized for smartphones and tablets
 - 🎯 **Exam Categories** - Dedicated support for BPSC, UPSC, SSC, Railway, and Bihar exams
-- ❓ **MCQ Generator** - Auto-generate practice multiple-choice questions with explanations
+- ❓ **MCQ Practice** - Practice multiple-choice questions with explanations
 - 📰 **Current Affairs** - Latest updates relevant to exam syllabi
 - 🔍 **Exam-Wise Q&A** - Curated questions specific to each exam type
-- 🌍 **Bilingual Support** - Seamless Hindi and English interface
-- 🔐 **Secure Authentication** - Environment-based API key management
-- 📊 **User Progress Tracking** - Track quiz attempts and scores (future)
+- 🌍 **Bilingual Support** - Seamless Hindi and English interface toggle
+- 🔐 **Secure Authentication** - JWT-based with environment variable management
+- 📊 **User Dashboard** - View progress and learning statistics
 
-## Tech Stack
+## 💻 Tech Stack
 
 ### Frontend
-- **React/React Native** - UI framework
-- **Tailwind CSS** - Styling
-- **Axios** - HTTP client
-- **Redux** - State management
-- **i18n** - Internationalization (Hindi/English)
+- **React 18** - UI framework
+- **Vite** - Fast build tool and dev server
+- **React Router v6** - Client-side routing
+- **i18next** - Internationalization (Hindi/English)
+- **Axios** - HTTP client with JWT interceptors
+- **CSS3** - Clean, responsive styling (mobile-first)
 
 ### Backend
 - **Node.js/Express** - REST API server
-- **MongoDB** - Database
-- **JWT** - Authentication
-- **Gemini AI API** - LLM integration for chat
-- **Dotenv** - Environment variable management
+- **Axios** - HTTP client
+- **CORS** - Cross-Origin Resource Sharing
+- **express-validator** - Input validation
+- **morgan** - HTTP request logging
+- **dotenv** - Environment variable management
 
-## Project Structure
+**Future Enhancements:**
+- MongoDB for persistent data storage
+- JWT authentication with bcrypt password hashing
+- Google Gemini AI API for intelligent responses
+- Stripe for premium features
+
+## 📁 Project Structure
 
 ```
 exam-jacko-ai-bot/
-├── frontend/                 # React web application
+├── frontend/                          # React + Vite web application
 │   ├── public/
 │   ├── src/
-│   │   ├── components/      # Reusable components
-│   │   ├── pages/           # Page components
-│   │   ├── services/        # API services
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── context/         # Context API setup
-│   │   ├── i18n/            # Translations (Hindi/English)
-│   │   ├── styles/          # CSS modules
-│   │   ├── utils/           # Utility functions
-│   │   ├── App.jsx
-│   │   └── index.jsx
+│   │   ├── components/                # Reusable UI components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── Loading.jsx
+│   │   │   ├── MessageBubble.jsx
+│   │   │   ├── ExamCard.jsx
+│   │   │   ├── MCQCard.jsx
+│   │   │   └── CurrentAffairsCard.jsx
+│   │   ├── pages/                     # Page components
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── ExamSelection.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   ├── MCQPractice.jsx
+│   │   │   ├── CurrentAffairs.jsx
+│   │   │   ├── Questions.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   └── Dashboard.jsx
+│   │   ├── services/
+│   │   │   └── api.js                 # Axios API client with interceptors
+│   │   ├── i18n/
+│   │   │   ├── config.js              # i18next configuration
+│   │   │   └── locales/
+│   │   │       ├── en.json            # English translations
+│   │   │       └── hi.json            # Hindi translations
+│   │   ├── styles/
+│   │   │   ├── global.css
+│   │   │   ├── app.css
+│   │   │   ├── navbar.css
+│   │   │   ├── auth.css
+│   │   │   ├── pages.css
+│   │   │   ├── chat.css
+│   │   │   ├── mcq.css
+│   │   │   ├── current-affairs.css
+│   │   │   ├── questions.css
+│   │   │   ├── profile.css
+│   │   │   ├── dashboard.css
+│   │   │   ├── message-bubble.css
+│   │   │   ├── exam-card.css
+│   │   │   ├── mcq-card.css
+│   │   │   └── current-affairs-card.css
+│   │   ├── App.jsx                    # Main app component
+│   │   └── index.jsx                  # React entry point
+│   ├── index.html                     # HTML template
+│   ├── vite.config.js                 # Vite configuration
+│   ├── package.json
 │   ├── .env.example
-│   └── package.json
+│   └── .env (git-ignored)
 │
-├── backend/                  # Express API server
-│   ├── routes/              # API route definitions
-│   ├── controllers/         # Route handlers
-│   ├── models/              # Database schemas
-│   ├── middleware/          # Auth, validation, etc.
-│   ├── services/            # Business logic
-│   ├── config/              # Configuration files
-│   ├── utils/               # Helper functions
+├── backend/                           # Express.js API server
+│   ├── routes/
+│   │   ├── auth.js                    # Authentication endpoints
+│   │   ├── chat.js                    # AI chat endpoints
+│   │   ├── mcq.js                     # MCQ generation endpoints
+│   │   ├── currentAffairs.js          # Current affairs endpoints
+│   │   └── questions.js               # Exam questions endpoints
+│   ├── server.js                      # Express app entry point
+│   ├── package.json
 │   ├── .env.example
-│   └── server.js
+│   └── .env (git-ignored)
 │
 ├── .gitignore
-├── .env.example
 ├── README.md
-└── LICENSE
-
+└── PROJECT_SUMMARY.md
 ```
 
-## Installation & Setup
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v16+)
+- Node.js v16 or higher
 - npm or yarn
-- MongoDB (local or Atlas)
-- Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+- Git
 
 ### Backend Setup
 
-1. **Clone and navigate:**
+1. **Clone repository:**
    ```bash
    git clone https://github.com/fizanaz5002-lab/exam-jacko-ai-bot.git
    cd exam-jacko-ai-bot/backend
@@ -90,25 +133,28 @@ exam-jacko-ai-bot/
    npm install
    ```
 
-3. **Create `.env` file:**
+3. **Setup environment:**
    ```bash
    cp .env.example .env
    ```
-   Fill in your environment variables:
+   Edit `.env` and configure:
    ```
    PORT=5000
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/exam-jacko
-   JWT_SECRET=your-super-secret-jwt-key-change-this
-   GEMINI_API_KEY=your-gemini-api-key-here
    NODE_ENV=development
+   MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/exam-jacko
+   JWT_SECRET=your-super-secret-jwt-key-here
+   GEMINI_API_KEY=your-gemini-api-key-here
+   CORS_ORIGIN=http://localhost:3000
+   LOG_LEVEL=info
    ```
 
 4. **Start backend:**
    ```bash
-   npm start
-   # or for development with hot reload
-   npm run dev
+   npm run dev    # Development with hot reload
+   npm start      # Production mode
    ```
+   Backend runs at: `http://localhost:5000`
+   Health check: `http://localhost:5000/api/health`
 
 ### Frontend Setup
 
@@ -122,71 +168,89 @@ exam-jacko-ai-bot/
    npm install
    ```
 
-3. **Create `.env` file:**
+3. **Setup environment:**
    ```bash
    cp .env.example .env
    ```
    Configure variables:
    ```
-   REACT_APP_API_URL=http://localhost:5000/api
-   REACT_APP_ENV=development
+   VITE_API_BASE_URL=http://localhost:5000/api
+   VITE_ENV=development
+   VITE_DEFAULT_LANGUAGE=en
    ```
 
 4. **Start development server:**
    ```bash
-   npm start
+   npm run dev
    ```
-   Opens at `http://localhost:3000`
+   Frontend runs at: `http://localhost:3000` (auto-opens)
 
-## API Documentation
+5. **Build for production:**
+   ```bash
+   npm run build
+   ```
+   Output in: `dist/` folder
+
+## 📡 API Endpoints
 
 ### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/logout` - User logout
-- `POST /api/auth/refresh-token` - Refresh JWT token
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | User login |
+| POST | `/api/auth/logout` | User logout |
 
 ### Chat & AI
-- `POST /api/chat/message` - Send message to chatbot
-- `GET /api/chat/history` - Get chat history
-- `DELETE /api/chat/history/:conversationId` - Clear conversation
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/chat/message` | Send message to chatbot |
+| GET | `/api/chat/history?userId=...` | Get chat history |
+| DELETE | `/api/chat/history/:userId` | Clear chat history |
 
-### MCQ Generation
-- `POST /api/mcq/generate` - Generate MCQs for a topic
-- `GET /api/mcq/by-exam/:exam` - Get MCQs by exam type
-- `POST /api/mcq/submit-answer` - Submit MCQ answer
+### MCQ Practice
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/mcq/generate` | Generate MCQs |
+| GET | `/api/mcq/by-exam/:exam` | Get MCQs by exam |
+| POST | `/api/mcq/submit-answer` | Submit MCQ answer |
 
 ### Current Affairs
-- `GET /api/current-affairs/latest` - Get latest current affairs
-- `GET /api/current-affairs/by-category/:category` - Get by category
-- `GET /api/current-affairs/related-to-exam/:exam` - Get relevant to exam
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/current-affairs/latest` | Get latest updates |
+| GET | `/api/current-affairs/by-category/:category` | Filter by category |
+| GET | `/api/current-affairs/related-to-exam/:exam` | Get exam-relevant news |
 
 ### Exam Questions
-- `GET /api/questions/by-exam/:exam` - Get questions for exam
-- `GET /api/questions/search` - Search questions
-- `POST /api/questions/difficulty/:level` - Get by difficulty level
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/questions/by-exam/:exam` | Get questions for exam |
+| GET | `/api/questions/search?keyword=...` | Search questions |
+| GET | `/api/questions/difficulty/:level` | Get by difficulty |
 
-### User Profile
-- `GET /api/user/profile` - Get user details
-- `PUT /api/user/profile` - Update user profile
-- `GET /api/user/progress` - Get learning progress
+## ⚙️ Environment Variables
 
-## Environment Variables
+### Frontend `.env`
+```
+VITE_API_BASE_URL=http://localhost:5000/api
+VITE_ENV=development
+VITE_DEFAULT_LANGUAGE=en
+```
 
-### Backend (.env)
+### Backend `.env`
 ```
 # Server
 PORT=5000
 NODE_ENV=development
 
-# Database
-MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/dbname
+# Database (Future)
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/exam-jacko
 
-# Authentication
+# Authentication (Future)
 JWT_SECRET=your-jwt-secret-key
 JWT_EXPIRE=7d
 
-# AI/LLM
+# AI API (Future)
 GEMINI_API_KEY=your-gemini-api-key
 
 # CORS
@@ -196,75 +260,138 @@ CORS_ORIGIN=http://localhost:3000
 LOG_LEVEL=info
 ```
 
-### Frontend (.env)
-```
-REACT_APP_API_URL=http://localhost:5000/api
-REACT_APP_ENV=development
-REACT_APP_DEFAULT_LANGUAGE=hi
-```
+⚠️ **CRITICAL:** Never commit `.env` files. Always use `.env.example` as template.
 
-⚠️ **IMPORTANT:** Never commit `.env` files to GitHub. Always use `.env.example` as template.
-
-## Security Best Practices
+## 🔐 Security
 
 ✅ **Implemented:**
-- API keys stored only in backend `.env` files
-- JWT token-based authentication
-- CORS configured
-- Input validation & sanitization
-- Environment variables for sensitive data
+- API keys stored in `.env` files (not in code)
+- Environment-based configuration
+- CORS protection
+- Input validation
+- Request/response logging
+- Structured error handling
 
-⚠️ **To Implement:**
-- Rate limiting on API endpoints
-- HTTPS enforcement in production
-- Data encryption for sensitive information
-- Regular security audits
-- MongoDB injection prevention
+🔜 **Planned:**
+- JWT authentication with bcrypt hashing
+- Rate limiting middleware
+- MongoDB with secure connection
+- HTTPS/TLS enforcement
+- Data encryption
+- SQL/NoSQL injection prevention
 
-## Development Roadmap
+## 📚 Available Scripts
 
-### Phase 1 (Current)
-- [x] Project structure setup
-- [ ] Authentication system
-- [ ] Chat interface (basic)
-- [ ] MCQ generator (basic)
+### Frontend
+```bash
+npm run dev      # Start development server (Vite)
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Lint code (when configured)
+```
 
-### Phase 2
-- [ ] Advanced chat with exam context
-- [ ] Current affairs integration
-- [ ] User progress dashboard
+### Backend
+```bash
+npm start        # Start production server
+npm run dev      # Start with nodemon (hot reload)
+npm test         # Run tests (when configured)
+```
+
+## 🎓 Supported Exams
+
+1. **UPSC** - Union Public Service Commission
+2. **BPSC** - Bihar Public Service Commission
+3. **SSC** - Staff Selection Commission
+4. **Railway** - Indian Railways Group D/NTPC
+5. **Bihar** - State level exams
+
+## 🌐 Supported Languages
+
+- 🇬🇧 **English** (en)
+- 🇮🇳 **Hindi** (hi)
+
+Toggle language from navbar - preference stored in localStorage.
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🛣️ Development Roadmap
+
+### Phase 1 - MVP (Current)
+- ✅ Project structure
+- ✅ Frontend UI (React + Vite)
+- ✅ Backend API structure
+- ✅ Authentication routes
+- ✅ Chat interface
+- ✅ MCQ practice
+- ✅ Current affairs
+- ✅ Bilingual support
+- ⏳ API integration testing
+
+### Phase 2 - Production Ready
+- [ ] MongoDB integration
+- [ ] Real JWT authentication
+- [ ] Google Gemini AI integration
+- [ ] Email verification
+- [ ] Password reset
+- [ ] User progress persistence
+- [ ] Rate limiting
+- [ ] Error monitoring (Sentry)
+
+### Phase 3 - Enhanced Features
+- [ ] Advanced search filters
+- [ ] Mock tests/exams
+- [ ] Performance analytics
+- [ ] Study recommendations
 - [ ] Mobile app (React Native)
-
-### Phase 3
-- [ ] ML-based question difficulty
-- [ ] Analytics & insights
+- [ ] Admin dashboard
+- [ ] Payment integration (Stripe)
 - [ ] Premium features
-- [ ] Admin panel
 
-## Contributing
+## 🐛 Known Issues & Limitations
 
-Contributions are welcome! Please follow these steps:
+- **Backend:** Using mock data (in-memory storage). Replace with MongoDB.
+- **Auth:** Basic mock implementation. Use JWT + bcrypt in production.
+- **AI Chat:** Mock responses. Integrate Google Gemini API for real AI.
+- **Data:** All data resets on server restart. Need persistent storage.
+
+## 💡 Tips for Development
+
+1. **Frontend debugging:** Open DevTools (F12) → Console/Network tabs
+2. **Backend debugging:** Check logs in terminal; add `console.log()` as needed
+3. **i18n:** Edit JSON files in `frontend/src/i18n/locales/`
+4. **API testing:** Use Postman/Insomnia to test endpoints
+5. **Responsive design:** Use DevTools device toolbar to test mobile
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create feature branch: `git checkout -b feature/YourFeature`
+3. Commit changes: `git commit -m 'Add YourFeature'`
+4. Push branch: `git push origin feature/YourFeature`
+5. Open Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - see LICENSE file for details
 
-## Support & Contact
+## 📞 Support
 
-- 📧 Email: support@examjacko.com (future)
-- 🐛 Issues: [GitHub Issues](https://github.com/fizanaz5002-lab/exam-jacko-ai-bot/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/fizanaz5002-lab/exam-jacko-ai-bot/discussions)
+- 🐛 **Bug Reports:** [GitHub Issues](https://github.com/fizanaz5002-lab/exam-jacko-ai-bot/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/fizanaz5002-lab/exam-jacko-ai-bot/discussions)
+- 📧 **Email:** Support via GitHub (future)
 
-## Disclaimer
+## ⚖️ Disclaimer
 
-This project is designed to supplement exam preparation and is not an official exam preparation service. Always refer to official exam guidelines and syllabi.
+This project is designed to supplement exam preparation and is **not** an official exam preparation service. Always refer to official exam guidelines and syllabi for accurate information.
 
 ---
 
-**Built with ❤️ for Indian exam aspirants**
+**Built with ❤️ for Indian exam aspirants | Exam Jacko AI Bot**
