@@ -38,32 +38,17 @@ function Login({ onLogin }) {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>{t('email')}</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
-
           <div className="form-group">
             <label>{t('password')}</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-
           <button type="submit" className="btn btn-primary" disabled={loading}>
             {loading ? t('loading') : t('sign_in')}
           </button>
         </form>
-
-        <p className="auth-link">
-          {t('dont_have_account')} <a href="/register">{t('sign_up')}</a>
-        </p>
+        <p className="auth-link">{t('dont_have_account')} <a href="/register">{t('sign_up')}</a></p>
       </div>
     </div>
   )

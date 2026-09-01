@@ -5,7 +5,6 @@ import '../styles/pages.css'
 
 function Home() {
   const { t } = useTranslation()
-
   return (
     <main className="page">
       <div className="container">
@@ -17,34 +16,15 @@ function Home() {
             <Link to="/register" className="btn btn-outline">{t('register')}</Link>
           </div>
         </section>
-
         <section className="features">
           <h2>Features</h2>
           <div className="grid grid-3">
-            <div className="card feature-card">
-              <h3>🤖 AI Chat</h3>
-              <p>Get instant answers to your exam-related questions powered by AI.</p>
-            </div>
-            <div className="card feature-card">
-              <h3>❓ MCQ Practice</h3>
-              <p>Practice with thousands of multiple-choice questions from all exams.</p>
-            </div>
-            <div className="card feature-card">
-              <h3>📰 Current Affairs</h3>
-              <p>Stay updated with latest current affairs relevant to your exams.</p>
-            </div>
-            <div className="card feature-card">
-              <h3>🏫 Exam-Wise QA</h3>
-              <p>Get curated questions specific to BPSC, UPSC, SSC, Railway, Bihar.</p>
-            </div>
-            <div className="card feature-card">
-              <h3>📊 Progress Tracking</h3>
-              <p>Track your learning progress and see your improvements over time.</p>
-            </div>
-            <div className="card feature-card">
-              <h3>🌍 Bilingual</h3>
-              <p>Learn in Hindi or English, switch anytime as per your preference.</p>
-            </div>
+            <div className="card feature-card"><h3>🤖 AI Chat</h3><p>Get instant answers to your exam-related questions powered by AI.</p></div>
+            <div className="card feature-card"><h3>❓ MCQ Practice</h3><p>Practice with thousands of multiple-choice questions from all exams.</p></div>
+            <div className="card feature-card"><h3>📰 Current Affairs</h3><p>Stay updated with latest current affairs relevant to your exams.</p></div>
+            <div className="card feature-card"><h3>🏫 Exam-Wise QA</h3><p>Get curated questions specific to BPSC, UPSC, SSC, Railway, Bihar.</p></div>
+            <div className="card feature-card"><h3>📊 Progress Tracking</h3><p>Track your learning progress and see your improvements over time.</p></div>
+            <div className="card feature-card"><h3>🌍 Bilingual</h3><p>Learn in Hindi or English, switch anytime as per your preference.</p></div>
           </div>
         </section>
       </div>
