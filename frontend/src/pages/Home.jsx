@@ -19,7 +19,7 @@ function Home() {
         </section>
 
         <section className="features">
-          <h2>{t('features')}</h2>
+          <h2>Features</h2>
           <div className="grid grid-3">
             <div className="card feature-card">
               <h3>🤖 AI Chat</h3>
@@ -34,7 +34,7 @@ function Home() {
               <p>Stay updated with latest current affairs relevant to your exams.</p>
             </div>
             <div className="card feature-card">
-              <h3>🎯 Exam-Wise QA</h3>
+              <h3>🏫 Exam-Wise QA</h3>
               <p>Get curated questions specific to BPSC, UPSC, SSC, Railway, Bihar.</p>
             </div>
             <div className="card feature-card">
