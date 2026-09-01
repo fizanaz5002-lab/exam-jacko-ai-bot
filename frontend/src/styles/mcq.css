@@ -1,0 +1,15 @@
+.mcq-controls {
+  margin-bottom: 2rem;
+}
+
+.mcq-controls .grid {
+  gap: 1rem;
+}
+
+.mcq-controls select {
+  width: 100%;
+}
+
+.mcq-list {
+  margin-top: 2rem;
+}

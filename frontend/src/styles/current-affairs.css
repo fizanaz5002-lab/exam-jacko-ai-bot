@@ -1,0 +1,11 @@
+.ca-controls {
+  margin-bottom: 2rem;
+}
+
+.ca-controls select {
+  max-width: 300px;
+}
+
+.ca-list {
+  margin-top: 2rem;
+}

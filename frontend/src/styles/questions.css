@@ -1,0 +1,27 @@
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+}
+
+.questions-controls {
+  margin-bottom: 2rem;
+}
+
+.question-item {
+  margin-bottom: 1rem;
+}
+
+.question-item h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.question-item .text-muted {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}

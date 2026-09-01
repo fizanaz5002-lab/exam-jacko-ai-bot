@@ -10,7 +10,7 @@ function ProtectedRoute({ isAuthenticated, children }) {
         <div className="card text-center">
           <h2>{t('unauthorized')}</h2>
           <p className="text-muted mt">
-            <a href="/login">{t('login')}</a> {t('to_continue')}
+            <a href="/login">{t('login')}</a>
           </p>
         </div>
       </div>
