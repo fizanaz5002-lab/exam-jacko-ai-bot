@@ -1,0 +1,52 @@
+.ca-card {
+  margin-bottom: 1rem;
+}
+
+.ca-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.ca-header h4 {
+  flex: 1;
+  color: var(--accent);
+}
+
+.importance {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.importance.high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.importance.medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.importance.low {
+  background-color: #dbeafe;
+  color: #0c2d6b;
+}
+
+.ca-category {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.ca-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+}

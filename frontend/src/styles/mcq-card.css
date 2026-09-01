@@ -1,0 +1,39 @@
+.mcq-card {
+  margin-bottom: 1.5rem;
+}
+
+.mcq-card h4 {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.options {
+  margin-bottom: 1rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option:hover {
+  border-color: var(--accent);
+  background-color: #f0f4ff;
+}
+
+.option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.option span {
+  flex: 1;
+}

@@ -1,0 +1,18 @@
+.exam-card {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.exam-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.exam-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.exam-card p {
+  margin-bottom: 1rem;
+}

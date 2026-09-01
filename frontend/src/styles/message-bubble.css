@@ -1,0 +1,27 @@
+.message-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message-bubble.user {
+  background-color: var(--accent);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.message-bubble.ai {
+  background-color: #e5e7eb;
+  color: var(--text);
+  margin-right: auto;
+  border-bottom-left-radius: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .message-bubble {
+    max-width: 90%;
+  }
+}
